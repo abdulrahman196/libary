@@ -1,0 +1,297 @@
+html {
+    font-size: 9.5px;
+    font-family: 'Varela round', sans-serif;
+    background-image: url("libar.jpg.jpg");
+    background-size: 100%;
+    box-sizing: border-box;
+    background-repeat: no-repeat;
+  
+}
+
+body {
+    margin: 0 !important;
+    padding: 0 !important;
+    height: 100vh;
+    width: 100vw;
+}
+
+/*------- popup modal -----*/
+
+.bg-modal {
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.7);
+    position: absolute;
+    top: 0;
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    display: none;
+}
+
+.modal-content {
+    position: relative;
+    width: 50rem;
+    background-color: white;
+    border-radius: 0.8rem;
+    padding: 4rem;
+    animation: popupA 0.3s linear 1;
+}
+
+.modal-content h1 {
+    font-size: 2rem;
+    font-family: 'Varela round', sans-serif;
+}
+
+.modal-content input {
+    width: 92%;
+    font-size: 1.7rem;
+    font-family: 'Varela round', sans-serif;
+    padding: 1rem 1.5rem;
+    margin: 1rem auto;
+    background-color: rgb(214, 220, 238);
+    color: rgb(28, 79, 235);
+    border: none;
+    border-radius: 3px;
+}
+
+.modal-content input::placeholder {
+    color: rgb(90, 111, 172);
+}
+
+.modal-content select {
+    width: 98%;
+    font-size: 1.7rem;
+    font-family: 'Varela round', sans-serif;
+    padding: 1rem 1.5rem;
+    margin: 1rem auto;
+    background-color: rgb(214, 220, 238);
+    border: none;
+    border-radius: 3px;
+    color: rgb(90, 111, 172);
+}
+
+.modal-content button {
+    float: right;
+    padding: 1rem 2rem 1rem 0.8rem;
+    margin: 2rem 1rem 0rem;
+    font-size: 1.5rem;
+    font-family: 'Varela round', sans-serif;
+    color: white;
+    background-color: #33c55f;
+    border-radius: 3px;
+    cursor: pointer;
+    border: none;
+    outline: none;
+}
+
+.modal-content button::before {
+    content: "+ ";
+    opacity: 0;
+    transition: 0.5s;
+}
+
+.modal-content button:hover::before {
+    opacity: 1;
+    padding-left: 0.8rem;
+}
+
+#cancel {
+    background-color: #c21f1f;
+}
+
+#cancel::before {
+    content: "x ";
+}
+
+.close {
+    position: absolute;
+    top: 0;
+    right: 1rem;
+    font-size: 4rem;
+    font-weight: 800;
+    transform: rotate(45deg);
+    cursor: pointer;
+    outline: none;
+    user-select: none;
+}
+
+/*------- header--------*/
+
+header {
+    position: relative;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    padding: 1rem 3rem;
+    height: auto;
+    width: auto;
+    background-color: rgba(39, 131, 236, 0.4);
+}
+
+.buttonNewbook {
+    position: absolute;
+    bottom: 1.5rem;
+    left: 4rem;
+    padding: 1rem 2rem 1rem 0.8rem;
+    font-size: 1.5rem;
+    font-family: 'Varela round', sans-serif;
+    color: white;
+    background-color: #33c55f;
+    border-radius: 3px;
+    cursor: pointer;
+    border: none;
+    outline: none;
+}
+
+.buttonNewbook::before {
+    content: "+ ";
+    transition: 0.5s;
+    opacity: 0;
+}
+
+.buttonNewbook:hover::before {
+    padding-left: 1rem;
+    opacity: 1;
+}
+
+header h1 {
+    font-size: 7rem;
+    margin: 4rem 0 6rem;
+    font-family: 'Varela round', sans-serif;
+    color: whitesmoke;
+    cursor: pointer;
+}
+
+/*--------knjige---------*/
+
+#books {
+    display: grid;
+    grid-template-columns: repeat(5, minmax(20rem, 1fr));
+    margin: 3rem 3rem 0 3rem;
+    padding-bottom: 3.5rem;
+}
+
+.book {
+    position: relative;
+    margin: 2rem 2rem;
+    padding: 2rem;
+    /* background-color: rgba(82, 5, 5, 0.8);*/
+    background-color: rgba(7, 17, 59, 0.8);
+    border-radius: 10px;
+    font-size: 2rem;
+    font-family: 'Loto', sans-serif;
+    color: rgb(247, 225, 225);
+}
+
+.book p {
+    margin: 1.5rem auto;
+}
+
+.title {
+    font-size: 3rem;
+    font-family: 'Dancing Script', cursive;
+    text-shadow: 0 0 1rem red;
+    text-align: center;
+}
+
+.read {
+    cursor: pointer;
+}
+
+.bin {
+    position: absolute;
+    bottom: 1.5rem;
+    right: 2rem;
+    width: 2.4rem;
+    cursor: pointer;
+    background-color: white;
+}
+
+.bin:hover {
+    animation: rotation 0.5s linear 1;
+}
+
+@keyframes rotation {
+    0% {
+        transform: rotate(0);
+    }
+    25% {
+        transform: rotate(10deg);
+    }
+    75% {
+        transform: rotate(-10deg);
+    }
+    100% {
+        transform: rotate(0);
+    }
+}
+
+@keyframes popupA {
+    0% {
+        transform: scale(0);
+    }
+    100% {
+        transform: scale(1)
+    }
+}
+
+/*-------footer---------*/
+.page-container {
+    position: relative;
+    min-height: 100vh;
+}
+footer div {
+    position: absolute;
+    box-sizing: border-box;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    padding: 1rem 0.5rem;
+    text-align: center;
+    font-size: 1.5rem;
+    font-family: sans-serif;
+    color: rgb(255, 255, 255);
+    font-weight: 600;
+    background-color: rgba(39, 131, 236, 0.3);
+}
+footer a {
+    text-decoration: none;
+    color: white;
+}
+footer a:hover {
+    text-decoration: underline;
+    color: rgb(28, 64, 184);
+}
+
+
+/*-------sort select----------*/
+#sort{
+    position: absolute;
+    bottom: 1.5rem;
+    left: 18rem;
+    font-size: 1.5rem;
+    font-family: 'Varela round', sans-serif;
+    padding: 0.9rem 1.5rem;
+    background-color: rgb(214, 220, 238);
+    color: rgb(90, 111, 172);
+    border: none;
+    border-radius: 3px;
+    outline: none;  
+}
+
+#onloadText{
+    position: absolute;
+    top: 28%;
+    left: 0;
+    right: 0;
+    box-sizing: border-box;
+    text-align: center;
+    font-size: 7rem;
+    font-family: 'Dancing Script', cursive;
+    color: rgb(249, 217, 217);
+    text-shadow: 0 0 0.7rem rgb(240, 170, 170);
+    user-select: none;
+
+}
